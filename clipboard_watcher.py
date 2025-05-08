@@ -1,18 +1,28 @@
 import time
 import pyperclip
+import os
 
-def main():
+def watch_clipboard_and_save():
+    last_text = ""
+    log_file = "clipboard_log.txt"
+
     print("Watching clipboard...")
-    recent_value = ""
     try:
         while True:
-            tmp_value = pyperclip.paste()
-            if tmp_value != recent_value and tmp_value.strip():
-                recent_value = tmp_value
-                print(f"\n[NEW COPY]: {recent_value}")
-            time.sleep(0.5)
+            text = pyperclip.paste()
+            if text != last_text and text.strip() != "":
+                timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+                entry = f"[{timestamp}] {text}\n"
+                print(entry.strip())
+
+                # Yeni Özelliğimiz! Artık bir .txt dosyasına kaydediyoruz.
+                with open(log_file, "a", encoding="utf-8") as file:
+                    file.write(entry)
+
+                last_text = text
+            time.sleep(1)
     except KeyboardInterrupt:
         print("\nStopped.")
 
 if __name__ == "__main__":
-    main()
+    watch_clipboard_and_save()
