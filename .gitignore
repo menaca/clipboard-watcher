@@ -1,0 +1,13 @@
+# Uygulamanın oluşturduğu log
+clipboard_log.txt
+
+# Python çöp dosyaları
+__pycache__/
+*.pyc
+
+# Kişisel ayarlar
+.vscode/
+.env
+
+# Sistem gereksizleri
+.DS_Store
