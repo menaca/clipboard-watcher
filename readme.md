@@ -3,7 +3,7 @@
 A simple Python script that monitors your clipboard and logs every new copied text in real time.
 
 Watches the clipboard and logs any new copied text to the console. 
-> This project was coded as an example for a Medium article.
+> This project was coded as an example for a Medium article. [Git ve GitHub ile Kodunu Yönet: Başlangıçtan İleriye Rehber](https://medium.com/@mehmetnazim005/git-ve-github-ile-kodunu-y%C3%B6net-ba%C5%9Flang%C4%B1%C3%A7tan-i%CC%87leriye-rehber-7d2a432be75f).
 
 ## Features
 
